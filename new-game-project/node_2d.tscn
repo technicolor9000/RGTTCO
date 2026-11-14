@@ -1,35 +1,97 @@
 [gd_scene format=3 uid="uid://4pqund3nukl7"]
 
-[ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://character_body_2d.gd" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://dd7hybjfdr1jq" path="res://pixil-frame-0(1).png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://bwkwp2memmh3m" path="res://pixil-frame-0(3).png" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://dos28wnevh7lb" path="res://pixil-frame-0(5).png" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://cme87d0temove" path="res://images.jpeg" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://csn0vtvdtebyr" path="res://FRdq8ZbPetwNDRV9R3hYpP-1920-80.jpg" id="4_0hol4"]
+
+[sub_resource type="GDScript" id="GDScript_0e48y"]
+script/source = "extends CharacterBody2D
+
+@onready var _animated_sprite = $AnimatedSprite2D
+
+func _process(_delta):
+		_animated_sprite.play(\"run\")
+
+
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
-size = Vector2(32, 91)
+size = Vector2(32, 62.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5h8ip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0e48y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_epypp")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6sboe"]
-size = Vector2(454, 304)
+size = Vector2(12144, 405)
 
 [node name="Node2D" type="Node2D" unique_id=1834061020]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1590250755]
-script = ExtResource("1_0e48y")
+script = SubResource("GDScript_0e48y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=671254706]
-position = Vector2(0, -0.5)
+position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_epypp")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1531134175]
-texture = ExtResource("1_wtcfe")
-
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1908982711]
+zoom = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1922155983]
+position = Vector2(1.4305115e-06, 0.5000019)
+scale = Vector2(2.4615388, 2.4230766)
+sprite_frames = SubResource("SpriteFrames_5h8ip")
+animation = &"run"
+frame_progress = 0.86382943
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1708164112]
 position = Vector2(82, 224)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=591250624]
-scale = Vector2(1, 0.44837758)
+position = Vector2(1532, 50.49999)
+scale = Vector2(26.862835, 0.5973452)
 texture = ExtResource("3_epypp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1392293375]
+visibility_layer = 3
+position = Vector2(1532, 50.5)
 shape = SubResource("RectangleShape2D_6sboe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=361704155]
+position = Vector2(1629.9994, -2452.1184)
+scale = Vector2(6.276041, 4.707627)
+texture = ExtResource("4_0hol4")
