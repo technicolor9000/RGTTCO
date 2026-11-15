@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c5mxp8gtey0y2"]
+
+[ext_resource type="Texture2D" uid="uid://0b1s8uqspuf4" path="res://pixil-frame-0(26).png" id="1_om433"]
+
+[sub_resource type="GDScript" id="GDScript_ebe7b"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+"
+
+[node name="Node2D" type="Node2D" unique_id=898204377]
+script = SubResource("GDScript_ebe7b")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=365261328]
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D" unique_id=2046646244]
+position = Vector2(0.99998474, -0.9999924)
+scale = Vector2(1.1328125, 0.8346056)
+texture = ExtResource("1_om433")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1265686412]
