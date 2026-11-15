@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://4pqund3nukl7"]
 
-[ext_resource type="Texture2D" uid="uid://bwkwp2memmh3m" path="res://pixil-frame-0(3).png" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://dos28wnevh7lb" path="res://pixil-frame-0(5).png" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://b8bh6fm01hu6b" path="res://pixil-frame-0(35).png" id="1_ei405"]
+[ext_resource type="Texture2D" uid="uid://c4hadfboaj5vb" path="res://pixil-frame-0(33).png" id="2_e8dv2"]
 [ext_resource type="Texture2D" uid="uid://co1ya52as67d3" path="res://photo-ground-texture-pattern.jpg" id="3_0hol4"]
 [ext_resource type="Texture2D" uid="uid://cme87d0temove" path="res://images.jpeg" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://cj0g2vpo1xnrk" path="res://pixil-frame-0(20).png" id="4_flf07"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://xo2ah88sv2qk" path="res://pixil-frame-0(23).png" id="7_fs4d3"]
 [ext_resource type="Texture2D" uid="uid://6ucmswghre28" path="res://pixil-frame-0(25).png" id="8_7vxoj"]
 [ext_resource type="Texture2D" uid="uid://dymbvwodhrinv" path="res://pixil-frame-0(12).png" id="8_rj586"]
+[ext_resource type="Texture2D" uid="uid://g2xvgg387qby" path="res://pixil-frame-0(36).png" id="9_e8dv2"]
 [ext_resource type="Texture2D" uid="uid://d03453c1ecmkj" path="res://pixil-frame-0(14).png" id="10_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://c3mvqyeow1sdn" path="res://pixil-frame-0(17).png" id="11_hqns4"]
 [ext_resource type="Texture2D" uid="uid://cvdnngeryy12x" path="res://pixil-frame-0(15).png" id="12_x0ka3"]
@@ -78,10 +79,10 @@ size = Vector2(36.5, 80.125)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0e48y")
+"texture": ExtResource("1_ei405")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_epypp")
+"texture": ExtResource("2_e8dv2")
 }],
 "loop": 1,
 "name": &"run",
@@ -156,7 +157,7 @@ script = SubResource("GDScript_gt76g")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1590250755]
 top_level = true
-position = Vector2(-11.001465, -54.26758)
+position = Vector2(1604.6946, -6033.1704)
 script = SubResource("GDScript_ajdvk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=671254706]
@@ -172,8 +173,8 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1922155983]
 z_index = 17
-position = Vector2(10.750265, 24.999952)
-scale = Vector2(2.8077338, 3.0769284)
+position = Vector2(10.501465, 24.767578)
+scale = Vector2(0.9487179, 1.0384614)
 sprite_frames = SubResource("SpriteFrames_5h8ip")
 animation = &"run"
 frame_progress = 0.008924986
@@ -203,6 +204,12 @@ z_index = 39
 position = Vector2(93.001465, 51.767593)
 scale = Vector2(3.3594594, 1.9148649)
 texture = ExtResource("8_7vxoj")
+
+[node name="PixilFrame0(36)" type="Sprite2D" parent="CharacterBody2D" unique_id=952804474]
+z_index = 39
+position = Vector2(22.501495, 30.767597)
+scale = Vector2(4.7550607, 2.2084007)
+texture = ExtResource("9_e8dv2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1708164112]
 position = Vector2(-222.75, -476.35547)
@@ -348,6 +355,29 @@ rotation = -1.8622663
 scale = Vector2(0.9999999, 0.9999999)
 texture = ExtResource("8_rj586")
 
+[node name="StaticBody2D6" type="StaticBody2D" parent="StaticBody2D6/StaticBody2D6" unique_id=95712323]
+position = Vector2(-3094.3672, 3190.5327)
+rotation = -1.8622663
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6/StaticBody2D6/StaticBody2D6" unique_id=129001507]
+position = Vector2(-2.506836, -35.291016)
+rotation = -3.4452798
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("CapsuleShape2D_xsy8g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D6/StaticBody2D6/StaticBody2D6" unique_id=1882157885]
+position = Vector2(33.236877, -41.187366)
+rotation = -1.8622663
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_xsy8g")
+
+[node name="PixilFrame0(12)" type="Sprite2D" parent="StaticBody2D6/StaticBody2D6/StaticBody2D6" unique_id=1270119131]
+position = Vector2(2.777966, -33.620693)
+rotation = -1.8622663
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("8_rj586")
+
 [node name="PixilFrame0(14)" type="Sprite2D" parent="." unique_id=617709897]
 top_level = true
 z_index = 26
@@ -416,6 +446,24 @@ rotation = -1.0471976
 texture = ExtResource("7_d21ai")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10" unique_id=915976456]
+position = Vector2(-0.49316406, -1.5302734)
+rotation = -1.0471976
+shape = SubResource("RectangleShape2D_kktvo")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="StaticBody2D10" unique_id=996776531]
+position = Vector2(5498.4326, 789.566)
+rotation = -1.0471976
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D10/StaticBody2D10" unique_id=713415233]
+position = Vector2(243.24367, 141.31032)
+rotation = 0.55850536
+shape = SubResource("CapsuleShape2D_ajdvk")
+
+[node name="PixilFrame0(11)" type="Sprite2D" parent="StaticBody2D10/StaticBody2D10" unique_id=958109484]
+rotation = -1.0471976
+texture = ExtResource("7_d21ai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10/StaticBody2D10" unique_id=1321905331]
 position = Vector2(-0.49316406, -1.5302734)
 rotation = -1.0471976
 shape = SubResource("RectangleShape2D_kktvo")
@@ -649,6 +697,96 @@ rotation = 1.0053097
 scale = Vector2(0.665, 0.895)
 polygon = PackedVector2Array(-17.205566, 14.593506, -87.49039, 53.46985, -328.82568, 186.95898, -335.21704, 179.01245, -248.47266, 122.58215, -27.291016, -0.44934082, 102.13965, -72.33606, 286.41895, -181.7945, 335.31396, -200.48328, 343.0542, -192.11145, 318.82568, -169.35242, 193.40479, -98.4256, 94.91016, -49.407104)
 
+[node name="StaticBody2D15" type="StaticBody2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D15" unique_id=1735918012]
+position = Vector2(1410.6072, -738.9365)
+rotation = 0.4223697
+scale = Vector2(1, 0.895)
+
+[node name="PixilFrame0(18)" type="Sprite2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D15/StaticBody2D15" unique_id=1436256296]
+rotation = 0.4223697
+scale = Vector2(1, 0.895)
+texture = ExtResource("13_0h7mo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D15/StaticBody2D15" unique_id=589212422]
+rotation = 0.4223697
+scale = Vector2(1, 0.895)
+polygon = PackedVector2Array(-17.205566, 14.593506, -87.49039, 53.46985, -328.82568, 186.95898, -335.21704, 179.01245, -248.47266, 122.58215, -27.291016, -0.44934082, 102.13965, -72.33606, 286.41895, -181.7945, 335.31396, -200.48328, 343.0542, -192.11145, 318.82568, -169.35242, 193.40479, -98.4256, 94.91016, -49.407104)
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14" unique_id=709150102]
+position = Vector2(1307.658, -5222.9644)
+rotation = 1.9355701
+scale = Vector2(1, 0.895)
+
+[node name="PixilFrame0(18)" type="Sprite2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D16" unique_id=613295862]
+rotation = 1.9355701
+scale = Vector2(1, 0.895)
+texture = ExtResource("13_0h7mo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D16" unique_id=1193343243]
+rotation = 1.9355701
+scale = Vector2(1, 0.895)
+polygon = PackedVector2Array(-17.205566, 14.593506, -87.49039, 53.46985, -328.82568, 186.95898, -335.21704, 179.01245, -248.47266, 122.58215, -27.291016, -0.44934082, 102.13965, -72.33606, 286.41895, -181.7945, 335.31396, -200.48328, 343.0542, -192.11145, 318.82568, -169.35242, 193.40479, -98.4256, 94.91016, -49.407104)
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D16" unique_id=583986858]
+position = Vector2(-3647.248, -4549.706)
+rotation = 2.0525072
+scale = Vector2(0.665, 0.895)
+
+[node name="PixilFrame0(18)" type="Sprite2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D16/StaticBody2D14" unique_id=1981291384]
+rotation = 2.0525072
+scale = Vector2(0.665, 0.895)
+texture = ExtResource("13_0h7mo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D16/StaticBody2D14" unique_id=1069107814]
+rotation = 2.0525072
+scale = Vector2(0.665, 0.895)
+polygon = PackedVector2Array(-17.205566, 14.593506, -87.49039, 53.46985, -328.82568, 186.95898, -335.21704, 179.01245, -248.47266, 122.58215, -27.291016, -0.44934082, 102.13965, -72.33606, 286.41895, -181.7945, 335.31396, -200.48328, 343.0542, -192.11145, 318.82568, -169.35242, 193.40479, -98.4256, 94.91016, -49.407104)
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D16" unique_id=1221329025]
+position = Vector2(-263.59802, -2613.3623)
+rotation = 0.4223697
+scale = Vector2(1, 0.895)
+
+[node name="PixilFrame0(18)" type="Sprite2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D16/StaticBody2D15" unique_id=362128976]
+rotation = 0.4223697
+scale = Vector2(1, 0.895)
+texture = ExtResource("13_0h7mo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D16/StaticBody2D15" unique_id=1731390339]
+rotation = 0.4223697
+scale = Vector2(1, 0.895)
+polygon = PackedVector2Array(-17.205566, 14.593506, -87.49039, 53.46985, -328.82568, 186.95898, -335.21704, 179.01245, -248.47266, 122.58215, -27.291016, -0.44934082, 102.13965, -72.33606, 286.41895, -181.7945, 335.31396, -200.48328, 343.0542, -192.11145, 318.82568, -169.35242, 193.40479, -98.4256, 94.91016, -49.407104)
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D16/StaticBody2D15" unique_id=241567296]
+position = Vector2(913.98535, 3709.0679)
+rotation = 1.0053097
+scale = Vector2(0.665, 0.895)
+
+[node name="PixilFrame0(18)" type="Sprite2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D16/StaticBody2D15/StaticBody2D14" unique_id=619672825]
+rotation = 1.0053097
+scale = Vector2(0.665, 0.895)
+texture = ExtResource("13_0h7mo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D16/StaticBody2D15/StaticBody2D14" unique_id=1142922381]
+rotation = 1.0053097
+scale = Vector2(0.665, 0.895)
+polygon = PackedVector2Array(-17.205566, 14.593506, -87.49039, 53.46985, -328.82568, 186.95898, -335.21704, 179.01245, -248.47266, 122.58215, -27.291016, -0.44934082, 102.13965, -72.33606, 286.41895, -181.7945, 335.31396, -200.48328, 343.0542, -192.11145, 318.82568, -169.35242, 193.40479, -98.4256, 94.91016, -49.407104)
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D16/StaticBody2D15" unique_id=1800129639]
+position = Vector2(1097.2391, 3058.842)
+rotation = 1.033235
+scale = Vector2(1, 0.895)
+
+[node name="PixilFrame0(18)" type="Sprite2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D16/StaticBody2D15/StaticBody2D15" unique_id=115565202]
+rotation = 1.033235
+scale = Vector2(1, 0.895)
+texture = ExtResource("13_0h7mo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D14/StaticBody2D16/StaticBody2D15/StaticBody2D15" unique_id=1036122203]
+rotation = 1.033235
+scale = Vector2(1, 0.895)
+polygon = PackedVector2Array(-17.205566, 14.593506, -87.49039, 53.46985, -328.82568, 186.95898, -335.21704, 179.01245, -248.47266, 122.58215, -27.291016, -0.44934082, 102.13965, -72.33606, 286.41895, -181.7945, 335.31396, -200.48328, 343.0542, -192.11145, 318.82568, -169.35242, 193.40479, -98.4256, 94.91016, -49.407104)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D14" unique_id=167494200]
 position = Vector2(-1055.6172, 509.83252)
 rotation = -2.0629187
@@ -771,7 +909,7 @@ scale = Vector2(0.99999994, 0.99999994)
 polygon = PackedVector2Array(-43.096924, -18.983093, -32.017822, -49.827515, -20.854248, -65.06439, 3.9333496, -75.37262, 17.815186, -74.23279, 32.95166, -62.401245, 39.96753, -37.991516, 32.22705, -2.498108, 18.460938, 29.652039, -5.1174316, 46.141174, -20.72705, 49.6911, -41.744873, 41.463135, -50.230957, 17.954346)
 
 [node name="PngtreeRustedChainLinkSkyStrengthMetalPngImage11653917" type="Sprite2D" parent="StaticBody2D19" unique_id=1757359512]
-z_index = -10
+z_index = -3
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("15_ta5nu")
 

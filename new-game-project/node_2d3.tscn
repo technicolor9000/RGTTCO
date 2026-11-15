@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://t8gsgk204owp"]
+
+[ext_resource type="Texture2D" uid="uid://0b1s8uqspuf4" path="res://pixil-frame-0(26).png" id="1_gi6lk"]
+[ext_resource type="Texture2D" uid="uid://bm32uai7bxwvd" path="res://pixil-frame-0(30).png" id="2_nl0h0"]
+[ext_resource type="Texture2D" uid="uid://c8r6koug8xjcg" path="res://pixil-frame-0(32).png" id="3_vwxnn"]
+
+[sub_resource type="GDScript" id="GDScript_6sboe"]
+
+[sub_resource type="GDScript" id="GDScript_ajdvk"]
+script/source = "extends CharacterBody2D
+
+
+
+var simultaneous_scene = preload(\"res://node_2d.tscn\").instantiate()
+
+func _add_a_scene_manually():
+	# This is like autoloading the scene, only
+	# it happens after already loading the main scene.
+	get_tree().change_scene_to_file(\"res://node_2d.tscn\")
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	
+	if Input.is_key_pressed(KEY_DOWN):
+		_add_a_scene_manually()
+"
+
+[node name="Node2D" type="Node2D" unique_id=2099910172]
+script = SubResource("GDScript_6sboe")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2098807926]
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D" unique_id=467068367]
+position = Vector2(1.4305115e-06, 0.50000453)
+scale = Vector2(1.1269531, 0.8256998)
+texture = ExtResource("1_gi6lk")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1836972986]
+script = SubResource("GDScript_ajdvk")
+
+[node name="PixilFrame0(30)" type="Sprite2D" parent="." unique_id=801059946]
+position = Vector2(-234, 107)
+texture = ExtResource("2_nl0h0")
+
+[node name="PixilFrame0(32)" type="Sprite2D" parent="." unique_id=641655376]
+position = Vector2(512.5, -17)
+scale = Vector2(1.2766666, 1.3333334)
+texture = ExtResource("3_vwxnn")
